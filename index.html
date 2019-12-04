@@ -1,1 +1,101 @@
-Index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+
+<body>
+    <div>
+        <header>
+            <div class="row justify-content-between mx-auto">
+                <div class="border" id=highscores>
+                    <h6>View highscores</h6>
+                </div>
+                <div class="border" id=timerbox>
+                    <h6 id="timeRemaining">Time: 0</h6>
+                    <!-- <h6 id="timeRemaining">##</h6> -->
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container border">
+        <div id="startPage">
+                <div class ="row">
+                        <h3 class = "col-12 border text-center">Welcome to the Coding Quiz!</h3>
+                    </div>
+                    <div class="row">
+                        <h5 class = "col-12 border text-center">This is a quiz. There are five questions, each with one multipe choice answer. You have 75 seconds
+                            to answer all the questions. An incorrect answer will dock your score. The time remaining is your
+                            score when you finish.</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button onclick="startUp()"><h1>Press Me to Start</h1></button>
+                        </div>
+                    </div>
+
+
+
+        </div>
+
+        <div id="questionPage" hidden="true">
+            <div class ="row">
+                <h3 class = "col-12 border text-center">Welcome to Question One!</h3>
+            </div>
+            <div class="row">
+                <h5 class = "col-12 border text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis numquam iusto aut. Eaque odit repellendus officia, reprehenderit commodi numquam quod accusantium maiores tempore est praesentium nemo deleniti sed similique?</h5>
+            </div>
+            <div class="row">
+                <div class="buttons col-12 border">
+                    <button class="buttonOne row"> Answer One </button>
+                    <button class="buttonTwo row"> Answer Two </button>
+                    <button class="buttonThree row"> Answer Three </button>
+                    <button class="buttonFour row"> Answer Four </button>
+                </div>
+                <div class="row" id="Correcto">
+                        <hr id="hrchange"></hr>
+                        <br>
+                    <p class="col-12">PLACEHOLDER FOR CORRECT / \ajkdfhlakjfhla</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row border" id="highScoreList" hidden="true">
+            <h4 class ="col-12">PLACEHOLDER</h4>
+            <p class="col-12"> PLACEHOLDER ORDERED LIST OF HIGHSCORES YEET</p>
+        </div>
+        <div class="row border" id="highScoreInput" hidden="true">
+            <p class="col-12 border"> You passed! Your score is: ##.</p>
+        
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
