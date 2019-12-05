@@ -8,17 +8,7 @@ var quizPageIndex;
 var highScoreArray = [];
 
 var questionPage = document.querySelector("#questionPage");
-var highScoreListPage = document.querySelector("#highScoreList");
-var initialsInputPage = document.querySelector("initialsInput");
-var startPagePage = document.querySelector("#startPage");
-var correctoPage = document.querySelector("#correcto");
-var correctoMessage = document.querySelector("#correctoMessage");
-
-
-// // whatever is happening here is not working
-// correctoMessage.addEventListener("input", function(event){
-//     console.log("something");
-// });
+var correctoPage = document.querySelector("#Correcto");
 
 
 function startUp(){
@@ -28,7 +18,7 @@ function startUp(){
     document.getElementById("highScoreList").hidden = true;
     document.getElementById("initialsInput").hidden = true;
     document.getElementById("startPage").hidden = true;
-    // correctoPage.hidden = true;
+    correctoPage.hidden = true;
 
     timeRemaining = 76;
     timerTick();
@@ -78,13 +68,13 @@ function quizButton(whichButton) {
     // check button text string needs to match answer text string.
     if (questions[quizPageIndex].answer == questions[quizPageIndex].choices[whichButton]) {
         correctoPage.hidden = false;
-        correctoMessage.textContent = "Correct";
+        document.getElementById("CorrectoMessage").textContent = "Correct";
 
     }
 
     else {
         correctoPage.hidden = false;
-        correctoMessage.textContent = "Incorrect";
+        document.getElementById("CorrectoMessage").textContent = "Incorrect";
         timeElapsed(15);
 
     }
@@ -94,29 +84,28 @@ function quizButton(whichButton) {
 
     } else {
         // Turn off all the questions, ask what your initials are, stop the timer
+        alert("The game is over!");
         clearInterval(timerID);
-        document.getElementById("initialsInput").hidden = false;
-        document.getElementById("questionPage").hidden = true;
-        
+        addHighscore();
     }
 
 
 }
 
-function addScore(){
-    var initials = document.querySelector("#initialInputText").value;
-    var userScore = initials + " - " + timeRemaining;
-    highScoreArray.push(userScore);
-    localStorage.setItem("highscores", JSON.stringify(highScoreArray));
-    
+function addHighscore () {
+    document.getElementById("initialsInput").hidden = false;
+    document.getElementById("questionPage").hidden = true;
 
+    
 }
 
 
 
 
 
-// var storageArray= JSON.parse(localStorage.getItem("description"));
-//     storageArray.push(event.target.value);
-//     // line 21 is apparently broken. Gotta go over it.
-//     localStorage.setItem("description", JSON.stringify(storageArray));
+
+
+var storageArray= JSON.parse(localStorage.getItem("description"));
+    storageArray.push(event.target.value);
+    // line 21 is apparently broken. Gotta go over it.
+    localStorage.setItem("description", JSON.stringify(storageArray));

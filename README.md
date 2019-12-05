@@ -15,7 +15,7 @@ so that I can gauge my progress compared to my peers
 
 How do you deliver this? Here are some guidelines:
 
-* Play proceeds as follows:
+* Play proceeds as follows: 
 
   * The user arrives at the landing page and is presented with a call-to-action to "Start Quiz." Also note the navigation option to "View Highscores" and the "Time" value set at 0.
 
