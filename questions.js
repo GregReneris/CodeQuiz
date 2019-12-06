@@ -12,6 +12,32 @@ var questions = [
       choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
       answer: "parentheses"
     },
+    //2
+    {
+        title: "The way to connect CSS, JavaScript, and J.Query to HTML is called:",
+        choices: ["attaching", "combining", "illuminating", "linking"],
+        answer: "linking"
+    },
+    //3
+    {
+        title: "The proper notation to create a timer interval in Javascript is which of the following:",
+        choices: ["setInterval(value, iterval)", "setTimer(value, interval)", "setCountdown(interval, value)", "setInterval(interval, value)"],
+        answer: "setInterval(value, interval)"
+    },
+    //4
+    {
+    title: "What following command is used in the console to directly update files on GitHub:",
+        choices: ["git add", "git pull", "git push", "git commit"],
+        answer: "git push"
+    },
+    //5
+    {
+        title: "HTML is a shortened form of what:",
+        choices: ["Hyper Type Madeup Language", "Hyper Text Markup Language", "Highlighting Text Markeup Linguistics", "Howard Tiberius Malarky the Last (creator of HTML)"],
+        answer: "Hyper Text Markup Language"
+
+    },
+
 
 ];
 

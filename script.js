@@ -13,13 +13,20 @@ var initialsInputPage = document.querySelector("initialsInput");
 var startPagePage = document.querySelector("#startPage");
 var correctoPage = document.querySelector("#correcto");
 var correctoMessage = document.querySelector("#correctoMessage");
-
+var finshedText = document.querySelector("#finishedText");
+var showScores = document.querySelector("#showScores");
+var scoreList = document.querySelector("#scoreList");
 
 // // whatever is happening here is not working
 // correctoMessage.addEventListener("input", function(event){
 //     console.log("something");
 // });
 
+highScoreArray = JSON.parse(localStorage.getItem("highscores"));
+if (highScoreArray == null){
+    highScoreArray = [];
+}
+console.log("Loaded Highscores: "+highScoreArray);
 
 function startUp(){
     // console.log("started");
@@ -34,6 +41,11 @@ function startUp(){
     timerTick();
     timerID = setInterval(timerTick, 1000);
     startQuizPage(0);    
+
+
+
+
+
 }
 
 function timerTick(){
@@ -97,6 +109,7 @@ function quizButton(whichButton) {
         clearInterval(timerID);
         document.getElementById("initialsInput").hidden = false;
         document.getElementById("questionPage").hidden = true;
+        finshedText.textContent = "You finished! Your final score is: " +timeRemaining;
         
     }
 
@@ -105,14 +118,47 @@ function quizButton(whichButton) {
 
 function addScore(){
     var initials = document.querySelector("#initialInputText").value;
-    var userScore = initials + " - " + timeRemaining;
+    var userScore = initials + " " + timeRemaining;
     highScoreArray.push(userScore);
-    localStorage.setItem("highscores", JSON.stringify(highScoreArray));
-    
+
+    highScoreArray.sort(function(a,b){
+        console.log("a:'"+a+"', b:'"+b+"'");
+        var nA = Number( a.substring(a.lastIndexOf(" ")));
+        var nB = Number( b.substring(b.lastIndexOf(" ")));
+        return nB-nA;
+    });
+    if (highScoreArray.length >10){
+        highScoreArray.pop();
+    }
+
+    localStorage.setItem("highscores", JSON.stringify(highScoreArray)); 
 
 }
 
 
+showScores.addEventListener("click", function(event){
+
+// bringHighScores(){
+
+    document.getElementById("initialsInput").hidden = true;
+    document.getElementById("startPage").hidden = true;
+    finshedText.hidden = true;
+    questionPage.hidden =true;
+    highScoreListPage.hidden = false;
+
+    var addtoList = document.createElement("li");
+console.log( "i got here" + highScoreArray);
+
+
+    for (let index = 0; index < highScoreArray.length; index++) {
+        var addtoList = document.createElement("li");
+console.log( "i got here");
+    addtoList.textContent= highScoreArray[index];
+    scoreList.appendChild(addtoList);
+    
+    }
+
+});
 
 
 

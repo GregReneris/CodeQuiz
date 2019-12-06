@@ -18,7 +18,7 @@
         <header>
             <div class="row justify-content-between mx-auto">
                 <div class="border" id=highscores>
-                    <h6>View highscores</h6>
+                    <h6 id="showScores">View highscores</h6>
                 </div>
                 <div class="border" id=timerbox>
                     <h6 id="timeRemaining">Time: 0</h6>
@@ -66,11 +66,14 @@
         </div>
         
         <div class="row border" id="highScoreList" hidden="true">
-            <h4 class ="col-12">PLACEHOLDER</h4>
-            <p class="col-12"> PLACEHOLDER ORDERED LIST OF HIGHSCORES YEET</p>
+            <h4 class ="col-12 mx-auto text-center">Highscores</h4>
+            <ul class="col-12 mx-auto text-center" id="scoreList" > HIGH SCORES
+                <li>Initials, Score </li>
+
+            </ul>
         </div>
         <div class="row border" id="initialsInput" hidden="true">
-            <p class="col-12 border mx-auto text-center" > You passed! Your score is: .</p>
+            <p class="col-12 border mx-auto text-center" id="finishedText" > You passed! Your score is: .</p>
             <input type="text" class="mx-auto" placeholder="What are your initials?" name="initial-Text" id="initialInputText" />
             <!-- doing mx-auto on both functions like space-between -->
             <input type="submit" class="mx-auto" value="Submit" onclick="addScore()">
