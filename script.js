@@ -56,26 +56,36 @@ function timerTick(){
     // console.log(timerTick);
 }
 
-
-function timeElapsed(elapsedTime){
+        // TimeElapsed is just defined as 1 ^above^ in timerTick() so that the countdown starting tick can work properly.
+        // Thus timeElapsed(1) and timeRemainging is then 76-1 at start. then we grab the text of timeremaining and that becomes the timeRemaining "75".
+function timeElapsed(elapsedTime){                  
     timeRemaining = timeRemaining-elapsedTime;
     document.getElementById("timeRemaining").textContent = "Time: " + timeRemaining;
     if (timeRemaining <= 0){
         console.log("game over");
         clearInterval(timerID);
+
+        //adding functionality to go to the score input page
+        document.getElementById("initialsInput").hidden = false;
+        document.getElementById("questionPage").hidden = true;
+        finshedText.textContent = "You finished! Your final score is: " +timeRemaining;
+
     }
 
 
 }
 
 
-
-
+            // like above startQuizPage is defined as 0 on startup. whichPage in the function below is then Also 0. Then the quizPageIndex is 0, but can count up now.
+            // WHICH PAGE IS 0.
 function startQuizPage(whichPage) {
     console.log ("The Quiz is Starting");
     quizPageIndex = whichPage;
+    //page is then defined as the 0,1,2,3,4,+ etc. of the questions ARRAY. As the integer increases, so will the button links adjust for the next page in the array.
     page = questions[quizPageIndex];
+    // question title is where the question text goes on the question page. this is referenced by page.title. 
     document.getElementById("questionTitle").textContent = page.title;
+    // index < 4? it works with 0-5 items on array. odd.
     for (let index = 0; index < 4; index++){
         document.getElementById("quizButton"+index).textContent = page.choices[index];
 

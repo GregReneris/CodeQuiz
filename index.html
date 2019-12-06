@@ -17,23 +17,23 @@
     <div>
         <header>
             <div class="row justify-content-between mx-auto">
-                <div class="border" id=highscores>
+                <div id=highscores>
                     <h6 id="showScores">View highscores</h6>
                 </div>
-                <div class="border" id=timerbox>
+                <div  id=timerbox>
                     <h6 id="timeRemaining">Time: 0</h6>
                     <!-- <h6 id="timeRemaining">##</h6> -->
                 </div>
             </div>
         </header>
     </div>
-    <div class="container border">
-        <div id="startPage">
+    <div class="container ">
+        <div id="startPage" class="border rounded">
                 <div class ="row">
-                        <h3 class = "col-12 border text-center">Welcome to the Coding Quiz!</h3>
+                        <h3 class = "col-12 text-center">Welcome to the Coding Quiz!</h3>
                     </div>
                     <div class="row">
-                        <h5 class = "col-12 border text-center">This is a quiz. There are five questions, each with one multipe choice answer. You have 75 seconds
+                        <h5 class = "col-12  text-center">This is a quiz. There are five questions, each with one multipe choice answer. You have 75 seconds
                             to answer all the questions. An incorrect answer will dock your score. The time remaining is your
                             score when you finish.</h5>
                     </div>
@@ -47,15 +47,15 @@
 
         </div>
 
-        <div id="questionPage" hidden="true">
+        <div id="questionPage" class="border rounded" hidden="true">
             <div class ="row">
-                <h3 class = "col-12 border text-center" id ="questionTitle">Welcome to Question One!</h3>
+                <h3 class = "col-12  text-center" id ="questionTitle">Welcome to Question One!</h3>
             </div>
             <div class="row">
                 <!-- <h5 class = "col-12 border text-center" id="questionTitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quis numquam iusto aut. Eaque odit repellendus officia, reprehenderit commodi numquam quod accusantium maiores tempore est praesentium nemo deleniti sed similique?</h5> -->
             </div>
             <div class="row">
-                <div class="col-12 border">
+                <div class="col-12 ">
                     <button class=" row" id="quizButton0" onclick="quizButton(0)"> Answer One </button>
                     <button class=" row" id="quizButton1" onclick="quizButton(1)"> Answer Two </button>
                     <button class=" row" id="quizButton2" onclick="quizButton(2)"> Answer Three </button>
@@ -67,8 +67,8 @@
         
         <div class="row border" id="highScoreList" hidden="true">
             <h4 class ="col-12 mx-auto text-center">Highscores</h4>
-            <ul class="col-12 mx-auto text-center" id="scoreList" > HIGH SCORES
-                <li>Initials, Score </li>
+            <ul class="col-12 mx-auto text-center" id="scoreList" >
+                <li id="headline">Initials | Score </li>
 
             </ul>
         </div>

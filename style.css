@@ -1,5 +1,5 @@
 body {
-    background-color: gold;
+    background-color: lightyellow;
 }
 
 
@@ -8,4 +8,43 @@ body {
     height: 1px;
     width: 50vw;
     background-color: navy;
+}
+
+#highscores {
+    margin-left: 10px;
+
+}
+
+#timerbox {
+    margin-right: 10px;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+#headline {
+
+    font-size: large;
+    
+    font-weight: bold;
+
+}
+
+#startPage {
+    background: lightblue;
+
+}
+
+#questionPage {
+    background: lightblue;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    
+}
+
+#container {
+    background: lightgoldenrodyellow;
+
 }
